@@ -1,7 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Homepage{% endblock %}
 
 {% block body %}
-    <h1>Homepage</h1>
+    
+
+    <ul>
+        {% for gite in gites %}
+            {{ gite.nom }}
+        {% endfor %}
+
+    </ul>
+
+
 {% endblock %}
