@@ -4,8 +4,38 @@
 
 {% block body %}
 
-    <div class="main-page">
-        <h1>Liste des gîtes</h1>
+    <div class="main-page d-flex">
+        <ul class="mt-100">
+            <div class="d-flex flex-row-wrap justify-content-center align-items-center">
+                {% for gite in gites %}
+                    <div class="list-gite d-flex flex-column m-20">
+                        <a href="{{ path('list_show', {id: gite.id})}}">
+
+                            <div class="d-flex flex-column justify-content-center align-items-center py-20">
+                                <div class="d-flex">
+                                    <img class="image-gite" src="{{ gite.image }}" alt="">
+                                </div>
+                                <div class="title-gite">
+                                    {{ gite.nom }}
+                                </div>
+                                <div class="content d-flex">
+                                    <div class="content-desc d-flex flex-row-wrap">
+                                        <p> •{{ gite.surface }} m2 • </p> 
+                                        <p> {{ gite.nbChambres }} chambres • </p>
+                                        <p> {{ gite.nbLits }} lits </p>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </ul>
+
     </div>
     
 {% endblock %}

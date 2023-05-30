@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Gite{% endblock %}
+
+{% block body %}
+
+   {% for gite in gites %}
+
+        {{ gite.nom }}
+    
+   {% endfor %}
+{% endblock %}
